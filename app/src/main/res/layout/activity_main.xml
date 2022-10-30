@@ -8,9 +8,11 @@
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.uvg.spotifyrecommendations.LoginFragment"
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_login" />
+        app:navGraph="@navigation/nav_graph"
+        app:defaultNavHost="true"/>
+
 </LinearLayout>

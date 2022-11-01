@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGeneratePlaylist"
         android:layout_width="332dp"
         android:layout_height="96dp"
         android:layout_marginTop="72dp"
@@ -35,7 +35,7 @@
         android:layout_height="1dp"
         android:layout_marginBottom="15dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnGeneratePlaylist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

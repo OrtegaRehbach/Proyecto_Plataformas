@@ -18,5 +18,13 @@
         android:id="@+id/mainMenuFragment"
         android:name="com.uvg.spotifyrecommendations.MainMenuFragment"
         android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" />
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_playListDisplayFragment"
+            app:destination="@id/playListDisplayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playListDisplayFragment"
+        android:name="com.uvg.spotifyrecommendations.PlayListDisplayFragment"
+        android:label="PlayListDisplayFragment" />
 </navigation>

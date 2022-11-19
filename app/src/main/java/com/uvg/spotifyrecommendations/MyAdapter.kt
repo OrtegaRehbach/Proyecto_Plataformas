@@ -16,6 +16,7 @@ class MyAdapter(private val songList : ArrayList<SongModel>) :
         val songTitle : TextView = itemView.findViewById(R.id.songTitleTextView)
         val artistName : TextView = itemView.findViewById(R.id.artistNameTextView)
         val songDuration : TextView = itemView.findViewById(R.id.songDurationTextView)
+        val no : TextView = itemView.findViewById(R.id.NoTextView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -30,6 +31,7 @@ class MyAdapter(private val songList : ArrayList<SongModel>) :
         holder.songTitle.text = currentItem.songTitle
         holder.artistName.text = currentItem.artistName
         holder.songDuration.text = currentItem.songDuration
+        holder.no.text = (position + 1).toString()
     }
 
     override fun getItemCount(): Int {

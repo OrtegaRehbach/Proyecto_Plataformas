@@ -20,11 +20,21 @@
         android:label="fragment_main_menu"
         tools:layout="@layout/fragment_main_menu" >
         <action
-            android:id="@+id/action_mainMenuFragment_to_playListDisplayFragment"
-            app:destination="@id/playListDisplayFragment" />
+            android:id="@+id/action_mainMenuFragment_to_playListParameterFragment"
+            app:destination="@id/playListParameterFragment" />
     </fragment>
     <fragment
         android:id="@+id/playListDisplayFragment"
         android:name="com.uvg.spotifyrecommendations.PlayListDisplayFragment"
-        android:label="PlayListDisplayFragment" />
+        android:label="PlayListDisplayFragment"
+        tools:layout="@layout/fragment_play_list_display" />
+    <fragment
+        android:id="@+id/playListParameterFragment"
+        android:name="com.uvg.spotifyrecommendations.PlayListParameterFragment"
+        android:label="PlayListParameterFragment"
+        tools:layout="@layout/fragment_play_list_parameter" >
+        <action
+            android:id="@+id/action_playListParameterFragment_to_playListDisplayFragment"
+            app:destination="@id/playListDisplayFragment" />
+    </fragment>
 </navigation>

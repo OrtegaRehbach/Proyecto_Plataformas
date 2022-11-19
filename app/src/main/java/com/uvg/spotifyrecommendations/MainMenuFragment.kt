@@ -15,7 +15,7 @@ class MainMenuFragment : Fragment(R.layout.fragment_main_menu) {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.btnGeneratePlaylist).setOnClickListener {
-            val action = MainMenuFragmentDirections.actionMainMenuFragmentToPlayListDisplayFragment()
+            val action = MainMenuFragmentDirections.actionMainMenuFragmentToPlayListParameterFragment()
             findNavController().navigate(action)
         }
     }

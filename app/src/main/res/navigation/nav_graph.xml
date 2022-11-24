@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mainMenuFragment"
-            app:destination="@id/mainMenuFragment" />
+            app:destination="@id/mainMenuFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/mainMenuFragment"
@@ -21,13 +25,33 @@
         tools:layout="@layout/fragment_main_menu" >
         <action
             android:id="@+id/action_mainMenuFragment_to_playListParameterFragment"
-            app:destination="@id/playListParameterFragment" />
+            app:destination="@id/playListParameterFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/playListDisplayFragment"
         android:name="com.uvg.spotifyrecommendations.PlayListDisplayFragment"
         android:label="PlayListDisplayFragment"
-        tools:layout="@layout/fragment_play_list_display" />
+        tools:layout="@layout/fragment_play_list_display" >
+        <argument
+            android:name="danceabilityValue" />
+        <argument
+            android:name="valenceValue" />
+        <argument
+            android:name="energyValue" />
+        <argument
+            android:name="tempoValue" />
+        <action
+            android:id="@+id/action_playListDisplayFragment_to_songDetailFragment"
+            app:destination="@id/songDetailFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
     <fragment
         android:id="@+id/playListParameterFragment"
         android:name="com.uvg.spotifyrecommendations.PlayListParameterFragment"
@@ -35,6 +59,19 @@
         tools:layout="@layout/fragment_play_list_parameter" >
         <action
             android:id="@+id/action_playListParameterFragment_to_playListDisplayFragment"
-            app:destination="@id/playListDisplayFragment" />
+            app:destination="@id/playListDisplayFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/songDetailFragment"
+        android:name="com.uvg.spotifyrecommendations.SongDetailFragment"
+        android:label="SongDetailFragment"
+        tools:layout="@layout/fragment_song_detail" >
+        <argument android:name="songName" />
+        <argument android:name="artistName" />
+        <argument android:name="songDuration" />
     </fragment>
 </navigation>

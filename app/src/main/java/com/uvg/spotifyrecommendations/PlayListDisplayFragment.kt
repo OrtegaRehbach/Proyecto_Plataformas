@@ -1,14 +1,18 @@
 package com.uvg.spotifyrecommendations
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
 class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
 
+    val args: PlayListDisplayFragmentArgs by navArgs()
     private lateinit var playListRecyclerView: RecyclerView
     private lateinit var songList: ArrayList<SongModel>
     private lateinit var imageId : Array<Int>
@@ -16,9 +20,16 @@ class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
     private lateinit var artistNames : Array<String>
     private lateinit var songDurations : Array<String>
     private val listSize = 50
+    val logTag : String = "SAFE_ARGS"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Checking for received args
+        Log.i(logTag, args.danceabilityValue)
+        Log.i(logTag, args.valenceValue)
+        Log.i(logTag, args.energyValue)
+        Log.i(logTag, args.tempoValue)
 
         setUpImageIds()
         setUpSongTitles()
@@ -30,7 +41,14 @@ class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
         playListRecyclerView = view.findViewById(R.id.PlayListRecyclerView)
         playListRecyclerView.layoutManager = LinearLayoutManager(context)
         playListRecyclerView.setHasFixedSize(true)
-        playListRecyclerView.adapter = MyAdapter(songList)
+        playListRecyclerView.adapter = MyAdapter(songList) {
+            val action = PlayListDisplayFragmentDirections.actionPlayListDisplayFragmentToSongDetailFragment(
+                it.songTitle,
+                it.artistName,
+                it.songDuration
+            )
+            findNavController().navigate(action)
+        }
     }
 
     private fun setUpImageIds() {

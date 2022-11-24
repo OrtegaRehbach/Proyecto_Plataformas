@@ -9,22 +9,28 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
 class PlayListParameterFragment : Fragment(R.layout.fragment_play_list_parameter) {
-    lateinit var seekBar : SeekBar
+    lateinit var danceabilitySeekBar : SeekBar
+    lateinit var valenceSeekBar : SeekBar
+    lateinit var energySeekBar : SeekBar
+    lateinit var tempoSeekBar : SeekBar
     lateinit var valueText : TextView
-    lateinit var button : Button
+    lateinit var generateButton : Button
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        seekBar = view.findViewById(R.id.seekBar)
-        valueText = view.findViewById(R.id.textView5)
-        button = view.findViewById(R.id.button)
+        danceabilitySeekBar = view.findViewById(R.id.danceabilitySeekBar)
+        valenceSeekBar = view.findViewById(R.id.valenceSeekBar)
+        energySeekBar = view.findViewById(R.id.energySeekBar)
+        tempoSeekBar = view.findViewById(R.id.tempoSeekBar)
+        valueText = view.findViewById(R.id.valueTestTextView)
+        generateButton = view.findViewById(R.id.generatePlaylistButton)
 
-        seekBar.setOnSeekBarChangeListener(object :
+        danceabilitySeekBar.setOnSeekBarChangeListener(object :
             SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seek: SeekBar,
                                            progress: Int, fromUser: Boolean) {
                 // write custom code for progress is changed
-                valueText.text = seekBar.progress.toString()
+                valueText.text = danceabilitySeekBar.progress.toString()
             }
 
             override fun onStartTrackingTouch(seek: SeekBar) {
@@ -36,8 +42,13 @@ class PlayListParameterFragment : Fragment(R.layout.fragment_play_list_parameter
             }
         })
 
-        button.setOnClickListener {
-            val action = PlayListParameterFragmentDirections.actionPlayListParameterFragmentToPlayListDisplayFragment()
+        generateButton.setOnClickListener {
+            val action = PlayListParameterFragmentDirections.actionPlayListParameterFragmentToPlayListDisplayFragment(
+                danceabilitySeekBar.progress.toString(),
+                valenceSeekBar.progress.toString(),
+                energySeekBar.progress.toString(),
+                tempoSeekBar.progress.toString()
+            )
             findNavController().navigate(action)
         }
     }

@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(private val songList : ArrayList<SongModel>) :
+class MyAdapter(
+    private val songList : ArrayList<SongModel>,
+    private val listener : (SongModel) -> Unit ) :
     RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
@@ -32,6 +35,8 @@ class MyAdapter(private val songList : ArrayList<SongModel>) :
         holder.artistName.text = currentItem.artistName
         holder.songDuration.text = currentItem.songDuration
         holder.no.text = (position + 1).toString()
+
+        holder.itemView.findViewById<CardView>(R.id.itemCardView).setOnClickListener { listener(currentItem) }
     }
 
     override fun getItemCount(): Int {

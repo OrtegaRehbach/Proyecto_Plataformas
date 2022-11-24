@@ -6,13 +6,112 @@
     android:layout_height="match_parent">
 
     <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="200dp"
+        android:id="@+id/energySeekBar"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:max="100"
         android:progress="50"
-        android:scaleX="1.25"
-        android:scaleY="1.25"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378" />
+
+    <TextView
+        android:id="@+id/maxTextView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="100"
+        app:layout_constraintStart_toEndOf="@+id/tempoSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/tempoSeekBar" />
+
+    <SeekBar
+        android:id="@+id/tempoSeekBar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482" />
+
+    <TextView
+        android:id="@+id/minTextView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/tempoSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/tempoSeekBar" />
+
+    <TextView
+        android:id="@+id/minTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/energySeekBar"
+        app:layout_constraintTop_toTopOf="@+id/energySeekBar" />
+
+    <TextView
+        android:id="@+id/maxTextView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="100"
+        app:layout_constraintStart_toEndOf="@+id/energySeekBar"
+        app:layout_constraintTop_toTopOf="@+id/energySeekBar" />
+
+    <SeekBar
+        android:id="@+id/valenceSeekBar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <TextView
+        android:id="@+id/maxTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="100"
+        app:layout_constraintStart_toEndOf="@+id/valenceSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/valenceSeekBar" />
+
+    <TextView
+        android:id="@+id/minTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/valenceSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/valenceSeekBar" />
+
+    <SeekBar
+        android:id="@+id/danceabilitySeekBar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="50"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -21,43 +120,63 @@
         app:layout_constraintVertical_bias="0.172" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/minTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/seekBar"
-        app:layout_constraintTop_toTopOf="@+id/seekBar" />
+        android:layout_marginEnd="20dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/danceabilitySeekBar"
+        app:layout_constraintTop_toTopOf="@+id/danceabilitySeekBar" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/maxTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/seekBar"
-        app:layout_constraintTop_toTopOf="@+id/seekBar" />
+        android:layout_marginStart="20dp"
+        android:text="100"
+        app:layout_constraintStart_toEndOf="@+id/danceabilitySeekBar"
+        app:layout_constraintTop_toTopOf="@+id/danceabilitySeekBar" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/valueTestTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="TextView"
+        android:layout_marginTop="16dp"
+        android:text="Value"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/danceabilitySeekBar" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/generatePlaylistButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="96dp"
-        android:text="Button"
+        android:text="Genrate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/playListSizeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="264dp"
+        android:text="Playlist Size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toEndOf="@+id/playListSizeTextView"
+        app:layout_constraintTop_toTopOf="@+id/playListSizeTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

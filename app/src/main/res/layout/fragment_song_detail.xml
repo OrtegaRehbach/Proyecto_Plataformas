@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="228dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/album_art_placeholder" />
+
+    <TextView
+        android:id="@+id/txtViewSongNameDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="44dp"
+        android:text="Song name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/txtViewArtistNameDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Atrist name(s):"
+        app:layout_constraintStart_toStartOf="@+id/txtViewSongNameDesc"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewSongNameDesc" />
+
+    <TextView
+        android:id="@+id/txtViewSongDurationDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Duration:"
+        app:layout_constraintStart_toStartOf="@+id/txtViewArtistNameDesc"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewArtistNameDesc" />
+
+    <TextView
+        android:id="@+id/txtViewSongNameDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="SongName"
+        app:layout_constraintStart_toEndOf="@+id/txtViewSongNameDesc"
+        app:layout_constraintTop_toTopOf="@+id/txtViewSongNameDesc" />
+
+    <TextView
+        android:id="@+id/txtViewArtistNameDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="ArtistName"
+        app:layout_constraintStart_toStartOf="@+id/txtViewSongNameDisp"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewSongNameDisp" />
+
+    <TextView
+        android:id="@+id/txtViewSongDurationDisp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Duration"
+        app:layout_constraintStart_toStartOf="@+id/txtViewArtistNameDisp"
+        app:layout_constraintTop_toBottomOf="@+id/txtViewArtistNameDisp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

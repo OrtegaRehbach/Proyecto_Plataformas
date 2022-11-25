@@ -1,6 +1,5 @@
 package com.uvg.spotifyrecommendations
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +8,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(
+class PlayListDisplayAdapter(
     private val songList : ArrayList<SongModel>,
     private val listener : (SongModel) -> Unit ) :
-    RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+    RecyclerView.Adapter<PlayListDisplayAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val coverArtImage : ImageView = itemView.findViewById(R.id.coverArtImageView)

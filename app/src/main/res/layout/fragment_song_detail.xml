@@ -9,19 +9,23 @@
         android:id="@+id/imageView2"
         android:layout_width="228dp"
         android:layout_height="227dp"
-        android:layout_marginTop="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
         app:srcCompat="@drawable/album_art_placeholder" />
 
     <TextView
         android:id="@+id/txtViewSongNameDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
         android:text="Song name:"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -31,7 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Atrist name(s):"
-        app:layout_constraintStart_toStartOf="@+id/txtViewSongNameDesc"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtViewSongNameDesc"
         app:layout_constraintTop_toBottomOf="@+id/txtViewSongNameDesc" />
 
     <TextView
@@ -40,16 +46,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Duration:"
-        app:layout_constraintStart_toStartOf="@+id/txtViewArtistNameDesc"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtViewArtistNameDesc"
         app:layout_constraintTop_toBottomOf="@+id/txtViewArtistNameDesc" />
 
     <TextView
         android:id="@+id/txtViewSongNameDisp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="20dp"
         android:text="SongName"
         android:textColor="@color/primaryTextColor"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/txtViewSongNameDesc"
         app:layout_constraintTop_toTopOf="@+id/txtViewSongNameDesc" />
 
@@ -59,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="ArtistName"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/txtViewSongNameDisp"
         app:layout_constraintTop_toBottomOf="@+id/txtViewSongNameDisp" />
 
@@ -68,6 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Duration"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/txtViewArtistNameDisp"
         app:layout_constraintTop_toBottomOf="@+id/txtViewArtistNameDisp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

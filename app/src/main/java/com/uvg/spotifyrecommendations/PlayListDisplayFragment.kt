@@ -1,7 +1,6 @@
 package com.uvg.spotifyrecommendations
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.TextView
@@ -9,7 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import kotlin.random.Random
 
 
 class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
@@ -44,7 +43,7 @@ class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
         playListRecyclerView = view.findViewById(R.id.PlayListRecyclerView)
         playListRecyclerView.layoutManager = LinearLayoutManager(context)
         playListRecyclerView.setHasFixedSize(true)
-        playListRecyclerView.adapter = MyAdapter(songList) {
+        playListRecyclerView.adapter = PlayListDisplayAdapter(songList) {
             val action = PlayListDisplayFragmentDirections.actionPlayListDisplayFragmentToSongDetailFragment(
                 it.songTitle,
                 it.artistName,
@@ -64,6 +63,14 @@ class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
         songTitles = Array<String>(listSize.toInt()) {
             "Song Title " + (it + 1)
         }
+        val longSongTitles = List(Random.nextInt(0, listSize.toInt())) {
+            Random.nextInt(0,listSize.toInt())
+        }
+
+        for (i in longSongTitles){
+            songTitles[i] = "Very Looooooong Song Title " + (i + 1)
+        }
+
     }
 
     private fun setUpArtistNames() {
@@ -73,8 +80,14 @@ class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
     }
 
     private fun setUpSongDurations() {
+//        songDurations = Array<String>(listSize.toInt()) {
+//            Random.nextInt(1, 5).toString() + ":" + Random.nextInt(10, 59).toString()
+//        }
         songDurations = Array<String>(listSize.toInt()) {
-            "3:30"
+            "$it"
+        }
+        for (i in 0 until listSize.toInt()) {
+            songDurations[i] = Random.nextInt(1, 5).toString() + ":" + Random.nextInt(10, 59).toString()
         }
     }
 

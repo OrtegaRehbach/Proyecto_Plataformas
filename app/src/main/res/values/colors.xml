@@ -18,4 +18,5 @@
     <color name="secondaryTextColor">#ffffff</color>
     <color name="tertiaryTextColor">#7f7f7f</color>
     <color name="backgroundColor">#121212</color>
+    <color name="spotifyGreen">#1DB954</color>
 </resources>

@@ -28,4 +28,15 @@
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:colorAccent">@color/secondaryColor</item>
     </style>
+
+    <style name="SpotifyButtonStyle" parent="android:Widget.Button">
+        <item name="android:background">@drawable/rounded_corner</item>
+        <!--item name="backgroundTint">@color/spotifyGreen</item-->
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
 </resources>

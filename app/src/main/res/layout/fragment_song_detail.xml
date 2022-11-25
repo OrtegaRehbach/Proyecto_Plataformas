@@ -49,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:text="SongName"
+        android:textColor="@color/primaryTextColor"
         app:layout_constraintStart_toEndOf="@+id/txtViewSongNameDesc"
         app:layout_constraintTop_toTopOf="@+id/txtViewSongNameDesc" />
 

@@ -17,6 +17,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // Vector support library for vector graphics
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -43,6 +45,7 @@ dependencies {
     // Navigation component
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

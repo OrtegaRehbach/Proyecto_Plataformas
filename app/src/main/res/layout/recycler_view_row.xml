@@ -9,10 +9,10 @@
         android:id="@+id/itemCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:focusable="true"
+        android:layout_margin="4dp"
+        android:backgroundTint="@color/primaryColor"
         android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,20 +28,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="3:30"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.146" />
+                app:layout_constraintTop_toTopOf="@+id/songTitleTextView" />
 
             <ImageView
                 android:id="@+id/coverArtImageView"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/album_art_placeholder"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/NoTextView"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -50,20 +50,22 @@
                 android:id="@+id/songTitleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:text="SongTitle"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/coverArtImageView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/coverArtImageView" />
 
             <TextView
                 android:id="@+id/artistNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="28dp"
                 android:text="ArtistName"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/coverArtImageView"
+                app:layout_constraintStart_toStartOf="@+id/songTitleTextView"
                 app:layout_constraintTop_toBottomOf="@+id/songTitleTextView"
                 app:layout_constraintVertical_bias="0.3" />
 
@@ -71,11 +73,12 @@
                 android:id="@+id/NoTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:text="00"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/coverArtImageView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.511" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

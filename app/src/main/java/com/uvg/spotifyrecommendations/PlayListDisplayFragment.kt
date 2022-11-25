@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.w3c.dom.Text
 
 
 class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
@@ -19,17 +21,18 @@ class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
     private lateinit var songTitles : Array<String>
     private lateinit var artistNames : Array<String>
     private lateinit var songDurations : Array<String>
-    private val listSize = 50
-    val logTag : String = "SAFE_ARGS"
+    private lateinit var listSize : Integer
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Checking for received args
-        Log.i(logTag, args.danceabilityValue)
-        Log.i(logTag, args.valenceValue)
-        Log.i(logTag, args.energyValue)
-        Log.i(logTag, args.tempoValue)
+        // Assigning args to TextViews
+        view.findViewById<TextView>(R.id.txtDanceabilityValue).text = args.danceabilityValue
+        view.findViewById<TextView>(R.id.txtValenceValue).text = args.valenceValue
+        view.findViewById<TextView>(R.id.txtEnergyValue).text = args.energyValue
+        view.findViewById<TextView>(R.id.txtTempoValue).text = args.tempoValue
+
+        listSize = Integer(args.playListSize)
 
         setUpImageIds()
         setUpSongTitles()
@@ -58,19 +61,19 @@ class PlayListDisplayFragment : Fragment(R.layout.fragment_play_list_display) {
     }
 
     private fun setUpSongTitles() {
-        songTitles = Array<String>(listSize) {
+        songTitles = Array<String>(listSize.toInt()) {
             "Song Title " + (it + 1)
         }
     }
 
     private fun setUpArtistNames() {
-        artistNames = Array<String>(listSize) {
+        artistNames = Array<String>(listSize.toInt()) {
             "Artist " + (it + 1)
         }
     }
 
     private fun setUpSongDurations() {
-        songDurations = Array<String>(listSize) {
+        songDurations = Array<String>(listSize.toInt()) {
             "3:30"
         }
     }

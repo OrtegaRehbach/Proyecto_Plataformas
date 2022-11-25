@@ -5,20 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/txtValenceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Valence"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/valenceSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/minTextView2" />
+
     <SeekBar
         android:id="@+id/energySeekBar"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="56dp"
         android:max="100"
         android:progress="50"
         android:scaleX="1.2"
         android:scaleY="1.2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
+        app:layout_constraintTop_toBottomOf="@+id/tempoSeekBar" />
 
     <TextView
         android:id="@+id/maxTextView6"
@@ -32,17 +43,16 @@
     <SeekBar
         android:id="@+id/tempoSeekBar"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="56dp"
         android:max="100"
         android:progress="50"
         android:scaleX="1.2"
         android:scaleY="1.2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
+        app:layout_constraintTop_toBottomOf="@+id/valenceSeekBar" />
 
     <TextView
         android:id="@+id/minTextView5"
@@ -74,17 +84,16 @@
     <SeekBar
         android:id="@+id/valenceSeekBar"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="56dp"
         android:max="100"
         android:progress="50"
         android:scaleX="1.2"
         android:scaleY="1.2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
+        app:layout_constraintTop_toBottomOf="@+id/danceabilitySeekBar" />
 
     <TextView
         android:id="@+id/maxTextView2"
@@ -107,17 +116,16 @@
     <SeekBar
         android:id="@+id/danceabilitySeekBar"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="104dp"
         android:max="100"
         android:progress="50"
         android:scaleX="1.2"
         android:scaleY="1.2"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/minTextView"
@@ -137,46 +145,102 @@
         app:layout_constraintStart_toEndOf="@+id/danceabilitySeekBar"
         app:layout_constraintTop_toTopOf="@+id/danceabilitySeekBar" />
 
-    <TextView
-        android:id="@+id/valueTestTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Value"
+    <Button
+        android:id="@+id/generatePlaylistButton"
+        android:layout_width="172dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="40dp"
+        android:text="Generate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/danceabilitySeekBar" />
-
-    <Button
-        android:id="@+id/generatePlaylistButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
-        android:text="Genrate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/playListSizeTextView" />
 
     <TextView
         android:id="@+id/playListSizeTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginBottom="264dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
         android:text="Playlist Size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="@color/primaryTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/minTextView4"
+        app:layout_constraintTop_toBottomOf="@+id/energySeekBar" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="75dp"
+    <TextView
+        android:id="@+id/txtDanceabilityTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Danceability"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/danceabilitySeekBar"
+        app:layout_constraintStart_toStartOf="@+id/minTextView" />
+
+    <TextView
+        android:id="@+id/txtEnergyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Energy"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tempoSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/minTextView5" />
+
+    <TextView
+        android:id="@+id/txtTempoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Tempo"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/energySeekBar"
+        app:layout_constraintStart_toStartOf="@+id/minTextView4" />
+
+    <EditText
+        android:id="@+id/editTextPlaylistSize"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="50"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/playListSizeTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toEndOf="@+id/playListSizeTextView"
-        app:layout_constraintTop_toTopOf="@+id/playListSizeTextView" />
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toEndOf="@+id/playListSizeTextView" />
+
+    <ImageButton
+        android:id="@+id/imgBtnMinusSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="#00FFFFFF"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPlaylistSize"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPlaylistSize"
+        app:srcCompat="@drawable/ic_baseline_remove_circle_outline_24"
+        app:tint="@color/tertiaryTextColor" />
+
+    <ImageButton
+        android:id="@+id/imgBtnPlusSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:backgroundTint="#00FFFFFF"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPlaylistSize"
+        app:layout_constraintStart_toEndOf="@+id/editTextPlaylistSize"
+        app:srcCompat="@drawable/ic_baseline_add_circle_outline_24"
+        app:tint="@color/tertiaryTextColor" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
